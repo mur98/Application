@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Mapping [ <!ELEMENT Mapping (Package+)> 
+<!ATTLIST Package name CDATA #REQUIRED>
+<!ATTLIST Package testData CDATA #IMPLIED> 
+<!ATTLIST Package clientEnvironment CDATA #IMPLIED>
+<!ATTLIST Package runStrategy (Full|Optimal) #IMPLIED> 
+<!ELEMENT Package (Class*)>
+<!ATTLIST Class name CDATA #REQUIRED>
+<!ATTLIST Class clientEnvironment CDATA #IMPLIED>
+<!ATTLIST Class testData CDATA #IMPLIED> 
+<!ATTLIST Class runStrategy (Full|Optimal) #IMPLIED>
+<!ELEMENT Class (MethodName*)>
+<!ATTLIST MethodName name CDATA #REQUIRED> 
+<!ATTLIST MethodName testData CDATA #IMPLIED> 
+<!ATTLIST MethodName clientEnvironment CDATA #IMPLIED> 
+<!ATTLIST MethodName runStrategy (Full|Optimal) #IMPLIED>]>
+
+
+<!-- this contains testMethod/testclass/testpackage mapping with browser and test data -->
+<Mapping>
+	<Package name="com.demo.dem.test.datatest" testData="data/TestData_1.xml"
+		runStrategy="Optimal">
+		<Class name="com.demo.dem.test.datatest.GoogleTest" clientEnvironment="browsers/FireFoxLocal.xml">
+			<!-- <MethodName name="verifySeleniumTitle" testData="data/TestData_1.xml"/> -->
+		</Class>
+	</Package>
+</Mapping>
